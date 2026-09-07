@@ -1,0 +1,28 @@
+# Tracked coins and per-timeframe signal configuration
+
+coins:
+  - BTC
+  - ETH
+  - SOL
+  - BNB
+  - XRP
+  - ADA
+  - DOGE
+  - AVAX
+
+timeframes:
+  - "1h"
+  - "4h"
+  - "1d"
+
+signal_thresholds:
+  buy: 0.60    # predicted probability of "up" move above which we emit BUY
+  sell: 0.40   # predicted probability of "up" move below which we emit SELL
+  # anything in between is HOLD
+
+backtest:
+  lookback_days: 180
+  train_window_days: 60
+  test_window_days: 7      # walk-forward step size
+  fee_bps: 10               # round-trip fee assumption, in basis points
+  risk_free_rate: 0.0
